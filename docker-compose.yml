@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  python-diagho-toolkit:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: docs:0.1.0
+    volumes:
+      - .:/code
+    command:
+      - "sleep"
+      - "infinity"
+    restart: unless-stopped
