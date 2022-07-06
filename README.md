@@ -12,4 +12,3 @@
 ### DevOps
 
 - Start a project with docker / dockerhub
-d

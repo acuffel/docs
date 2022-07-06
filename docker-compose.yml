@@ -1,14 +1,25 @@
 version: "3.8"
 
 services:
-  python-diagho-toolkit:
+  docs:
     build:
         context: .
-        dockerfile: Dockerfile
+        dockerfile: ./src/docs/Dockerfile
     image: docs:0.1.0
     volumes:
-      - .:/code
+      - ./src/docs:/code
+      - core-venv:/code/venv
+      - core-tox:/code/.tox
     command:
       - "sleep"
       - "infinity"
     restart: unless-stopped
+
+volumes:
+  core-venv:
+    external: false
+    name: "docs-venv"
+
+  core-tox:
+    external: false
+    name: "docs-tox"

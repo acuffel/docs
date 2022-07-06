@@ -1,38 +1,16 @@
 default: help
 
-.PHONY: venv
-venv: ## Creates a virtual environment.
-	python3 -m venv venv
-
-.PHONY: requirements
-requirements: ## Builds or updates requirements.
-	venv/bin/pip install --upgrade pip wheel setuptools pip-tools
-	venv/bin/pip-compile --upgrade requirements.in
-
-.PHONY: install
-install: ## Installs dependencies.
-	venv/bin/pip install --upgrade pip wheel setuptools
-	venv/bin/pip install -r requirements.txt
-
-.PHONY: tests
-tests: ## Runs all tests.
-	venv/bin/tox
-
-.PHONY: build
-build: ## Build the package
-	venv/bin/python -m build
-
-.PHONY: push-test
-push-test: ## Push dist on test PyPi
-	venv/bin/python -m twine upload --repository testpypi dist/*
-
-.PHONY: push-prod
-push-prod: ## Push dist on prod PyPi
-	venv/bin/python -m twine upload dist/*
-
 .PHONY: docker
 docker: ## Create a container docker with the app
 	docker-compose up --build --remove-orphans --renew-anon-volumes
+
+.PHONY: clean-docker
+clean-docker: ## Cleans development environment (Docker containers and volumes).
+	docker rm docs_docs_1; exit 0
+	docker volume rm docs-tox; exit 0
+	docker volume rm docs-venv; exit 0
+	rm -rf src/docs/.tox
+	rm -rf src/docs/venv
 
 .PHONY: help
 help: ## Lists all the available commands.

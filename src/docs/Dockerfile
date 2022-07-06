@@ -23,10 +23,11 @@ RUN useradd ${USER_NAME} --non-unique --uid ${USER_UID} --gid ${USER_GID} --crea
 
 # Create required directories
 RUN mkdir -p /code
+RUN mkdir -p /code/.tox
+RUN mkdir -p /code/venv
 RUN chown -R ${USER_UID}:${USER_GID} /code
 
-# Change working directory
+# Install
 WORKDIR /code
-
-# Change user
 USER ${USER_NAME}
+RUN make venv
