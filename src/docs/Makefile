@@ -11,7 +11,8 @@ requirements: ## Builds or updates requirements.
 
 .PHONY: install
 install: ## Installs dependencies.
-	venv/bin/pip install --upgrade pip wheel setuptools
+	venv/bin/pip install --upgrade pip wheel setuptools pip-tools
+	venv/bin/pip-compile --upgrade requirements.in
 	venv/bin/pip install -r requirements.txt
 
 .PHONY: tests
