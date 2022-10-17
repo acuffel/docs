@@ -6,12 +6,12 @@
 - How to parameter VSCode 
 
 ### Python
-- Init documentation with sphinx
+- Init documentation with mkDocs
 - Create a Makefile
 
 ### DevOps
 
-- Start a project with docker / dockerhub
+- Start a project with docker / docker compose
 
 ### Tests
 
