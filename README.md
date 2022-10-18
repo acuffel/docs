@@ -1,17 +1,28 @@
-# Documentations
+# AC Documentations
+
+I've juste initialized the documentation project and i need to implement it
 
 ## Docs to insert in this website
 
 ### IDE
-- How to parameter VSCode 
+- How to configure VSCode 
 
-### Python
-- Init documentation with sphinx
-- Create a Makefile
+### Best practices to start a Django project
+- Set up usefull files
+  - Makefile
+  - Requirements.in
+  - tox
+  - .gitignore
+  - .env
+  - LICENCE
+  - README
+- Create an application 
+- How to implement Django Rest Framework
+
 
 ### DevOps
 
-- Start a project with docker / dockerhub
+- Start a project with docker / docker-compose
 
 ### Tests
 
@@ -20,20 +31,28 @@
 
 ## How to use it
 
-### Clone this repository
+### Creates a development environment and install the required dependencies
 
-```bash
-git clone git@github.com:acuffel/docs.git
-```
-
-### Load container 
-
-```bash
-make docker
-```
-
-### Install requirements in container
-
-```bash
+``` 
 make install
+```
+
+### Updates the development environment
+``` 
+make update-env
+```
+
+### Starts a lightweight development Web server on the local machine
+``` 
+make serve
+```
+
+### Builds the documentation
+``` 
+make build
+```
+
+### Quicktart demo app
+``` 
+make quickstart
 ```
