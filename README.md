@@ -1,8 +1,6 @@
 # AC Documentations
 
-I've juste initialized the documentation project and i need to implement it
-
-## Docs to insert in this website
+## Docs to insert in this documentation
 
 ### IDE
 - How to configure VSCode 
