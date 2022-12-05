@@ -19,7 +19,7 @@ update-venv: ## Updates the development environment.
 
 .PHONY: serve
 serve: ## Starts a lightweight development Web server on the local machine.
-	$(VENV_DIR)/bin/mkdocs serve --dev-addr '127.0.0.1:8000'
+	$(VENV_DIR)/bin/mkdocs serve --dev-addr '127.0.0.3:8000'
 
 .PHONY: build
 build: ## Builds the documentation.
