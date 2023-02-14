@@ -31,3 +31,12 @@ $ ssh-keygen -t rsa -b 4096 -C "Add a name to this key"
 ```bash
 $ ssh-copy-id -i ~/.ssh/id_rsa.pub acuffel@51.91.80.58
 ```
+
+- Allow to connect with password
+
+```bash
+$ vim /etc/ssh/sshd_config 
+PasswordAuthentication yes
+AllowUsers <user_name>
+$ service sshd restart
+```
